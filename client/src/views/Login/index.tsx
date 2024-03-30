@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRef } from "react";
+import { v4 as uuidV4 } from "uuid";
 
 interface Props {
   onIdSubmit: React.Dispatch<React.SetStateAction<string>>;
@@ -15,6 +16,11 @@ export default function Login({ onIdSubmit: onSetId }: Props) {
     onSetId(idRef!.current!.value);
     console.log("Submitted");
   };
+
+  const handleCreateNewId = (): void => {
+    onSetId(uuidV4());
+  };
+
   return (
     <div className="flex items-center justify-center w-full h-full">
       <form
@@ -26,7 +32,7 @@ export default function Login({ onIdSubmit: onSetId }: Props) {
         </Label>
         <Input id="userId" placeholder="Enter ID" ref={idRef} />
         <Button type="submit">Login</Button>
-        <Button type="button" variant="outline">
+        <Button onClick={handleCreateNewId} type="button" variant="outline">
           Create New ID
         </Button>
       </form>
