@@ -22,14 +22,12 @@ export default function Login({ onIdSubmit: onSetId }: Props) {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-full">
+    <div className="flex flex-col gap-8 items-center justify-center w-full h-full">
+      <h1 className="text-4xl font-bold">chat-app</h1>
       <form
         onSubmit={handleSubmit}
         className="grid w-full max-w-sm items-start gap-1.5"
       >
-        <Label htmlFor="userId" className="text-start">
-          Enter you ID
-        </Label>
         <Input id="userId" placeholder="Enter ID" ref={idRef} />
         <Button type="submit">Login</Button>
         <Button onClick={handleCreateNewId} type="button" variant="outline">
