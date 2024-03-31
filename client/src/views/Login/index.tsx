@@ -30,7 +30,7 @@ export default function Login({ onIdSubmit: onSetId }: Props) {
       >
         <Input id="userId" placeholder="Enter ID" ref={idRef} />
         <Button type="submit">Login</Button>
-        <Button onClick={handleCreateNewId} type="button" variant="outline">
+        <Button onClick={handleCreateNewId} type="button" variant="secondary">
           Create New ID
         </Button>
       </form>
