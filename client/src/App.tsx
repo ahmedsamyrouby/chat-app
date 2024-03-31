@@ -1,10 +1,10 @@
 import Login from "@/views/Login";
-import { useState } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [id, setId] = useState("");
+  const [id, setId] = useLocalStorage("id");
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
